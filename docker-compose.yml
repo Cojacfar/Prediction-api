@@ -1,5 +1,5 @@
 web:
-  build: ./web
+  build: ./Prediction-api
   ports:
    - "5000:5000"
   volumes:
