@@ -8,13 +8,11 @@ class Predict(Resource):
     #Resource to predict the category of a tweet 
     def __init__(self, **kwargs):
         self.model = kwargs['model']
-        
-    def put(self, Tweet):
+               
+    def put(self):
         args = parser.parse_args()
-        #return {'category' : self.model.predict(args.Tweet)}
-        return {"Hello" : "World"}
+        return {'category' : self.model.predict(args.Tweet)}
 
-    def get(self, Tweet):
+    def get(self):
         args = parser.parse_args()
-        #return {'category' : self.model.predict(args.Tweet)}
-        return {"GET" : "WORLD"}
+        return {'category' : self.model.predict(args.Tweet)}

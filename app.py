@@ -7,12 +7,13 @@ app = Flask(__name__)
 api = Api(app)
 
 predictor = Model()
-api.add_resource(Predict, '/predict', '/', resource_class_kwargs={'model':predictor})
+
 class Basic(Resource):
     def get(self):
         return {"CLASS": "Basic"}
 
 api.add_resource(Basic, '/' )
+api.add_resource(Predict, '/predict', '/Predict', resource_class_kwargs={'model':predictor})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5002)
